@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career GENIE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/home_header.css">
+
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        .animate-fadeIn {
+            animation: fadeIn 1s;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-scaleIn {
+            animation: scaleIn 2s;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slideInLeft {
+            animation: slideInLeft 1s;
+        }
+
+
+        .cta {
+            padding: 0;
+            margin-bottom: 60px;
+        }
+
+        .cta .container {
+            padding: 80px;
+            background: rgba(var(--color-secondary-rgb), 0.1);
+            border-radius: 15px;
+        }
+
+        @media (max-width: 992px) {
+            .cta .container {
+                padding: 60px;
+            }
+        }
+
+        .cta .content h3 {
+            color: var(--color-secondary);
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .cta .content h3 em {
+            font-style: normal;
+            position: relative;
+        }
+
+        .cta .content h3 em:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+            height: 10px;
+            background: rgba(var(--color-primary-rgb), 0.5);
+            z-index: -1;
+        }
+
+        .cta .content p {
+            color: var(--color-secondary);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .cta .content .cta-btn {
+            color: var(--color-white);
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-block;
+            padding: 12px 40px;
+            border-radius: 5px;
+            transition: 0.5s;
+            margin-top: 10px;
+            background: rgba(var(--color-primary-dark-rgb), 0.9);
+        }
+
+        .cta .content .cta-btn:hover {
+            background: var(--color-primary);
+        }
+
+        .cta .img {
+            position: relative;
+        }
+
+        .cta .img:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(var(--color-white-rgb), 0.5);
+            border-radius: 15px;
+            transform: rotate(12deg);
+        }
+
+        .cta .img:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(var(--color-white-rgb), 0.9);
+            border-radius: 15px;
+            transform: rotate(6deg);
+        }
+
+        .cta .img img {
+            position: relative;
+            z-index: 3;
+            border-radius: 15px;
+        }
+    </style>
+    <%- include('include/navbarhead')%>
+</head>
+
+<body>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.animate-scaleIn').addClass('animated scaleIn');
+        });
+
+    </script>
+
+    <div class="container animate-scaleIn">
+
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-sm-7">
+                        <br></br>
+                        <br></br>
+                        <h1
+                            style="font-size:90px; padding-left: 50px; font-family: 'Roboto Slab', serif; color:rgba(0, 67, 126, 0.819)">
+                            Career Genie</h1>
+                        <h4 style=" padding-left: 70px;font-family: 'PT Serif', serif;
+                    font-family: 'Roboto Slab', serif;color:rgb(66, 178, 244)">Unlock Your Career Potential With Career
+                            Genie</h4>
+                        <button class="button" onclick="location.href='/stats'">Placement Statistics</button>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <img class="animated-image" src="../images/frontimage.jpeg" alt="Image" style="width:100%;">
+                        <%if(!req.session.student_id && !req.session.pc_id && !req.session.admin_id){%>
+                            <button class="button" onclick="location.href='/login_index'"> Get Started </button>
+                            <%}else if(req.session.student_id){%>
+                                <button class="button" onclick="location.href='/studentdash'"> Dashboard </button>
+                                <%}else if(req.session.pc_id){%>
+                                    <button class="button" onclick="location.href='/pcdash'"> Dashboard </button>
+                                    <%}else if(req.session.admin_id){%>
+                                        <button class="button" onclick="location.href='/admindash'"> Dashboard </button>
+                                        <%}%>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <br>
+    <br>
+
+    <script>
+        $(document).ready(function () {
+            $('.animate-scaleIn').addClass('animated scaleIn');
+        });
+    </script>
+
+    <div class="container-fluid animate-scaleIn">
+        <div class="row">
+            <div class="col-12">
+                <section id="clients" class="clients">
+                    <div class="container" data-aos="zoom-out">
+                        <div class="clients-slider swiper">
+                            <div class="swiper-wrapper align-items-center">
+                                <div class="swiper-slide"><img src="../images/clients/client-16.png" class="img-fluid"
+                                        alt=""></div>
+
+                                <div class="swiper-slide"><img src="../images/clients/client-10.jpg" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-11.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-12.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-13.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-14.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-15.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-1.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-3.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-2.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-4.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-5.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-6.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-7.png" class="img-fluid"
+                                        alt=""></div>
+                                <div class="swiper-slide"><img src="../images/clients/client-8.png" class="img-fluid"
+                                        alt=""></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <script>
+                    var swiper = new Swiper('.swiper', {
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        },
+                        slidesPerView: 5,
+                        spaceBetween: 30,
+                        loop: true,
+                        navigation: {
+                            nextEl: null,
+                            prevEl: null,
+                        },
+                        pagination: {
+                            el: null,
+                        },
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+    <script>
+        mySwiper.slideTo(Math.floor(Math.random() * mySwiper.slides.length));
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+    <style>
+        .swiper-slide img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .swiper-slide img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <div class="container">
+        <div class="card" style="background-color: rgb(171, 244, 250);">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="../images/placementportal.png" alt="your image" class="img-fluid"
+                        style="padding-left: 40px;padding-top:25px;padding-bottom:25px ;">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body" style="padding-right: 35px;">
+                        <h2 style="font-family:Verdana, Geneva, Tahoma, sans-serif">
+                            Placement Portal</h2>
+                        <br>
+                        <p class="text-justify" style="font-size: 20px;">The Placement Cell plays a crucial role in
+                            locating job
+                            opportunities for under graduates and post graduates passing out from the college by
+                            keeping in touch with reputed firms and industrial establishments.
+                            <br>The placement cell operates round the year to facilitate contacts between companies
+                            and graduates. The number of students placed through the campus interviews is
+                            continuously rising.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <%- include('include/footer') %>
+</body>
+
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>My Career Genie</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .navbar {
+            background-image: url('../images/career\ navbar.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .navbar .navbar-nav .nav-link {
+            color: white;
+            font-size: 17px;
+            /* Adjust the font size as desired */
+            padding: 10px 20px;
+            /* Adjust the padding values as desired */
+        }
+
+        .navbar .navbar-nav .nav-link:hover {
+            color: rgb(40, 23, 193);
+        }
+
+        .full-screen {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('../images/career.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .heading {
+            position: absolute;
+            top: 65px;
+            left: 20px;
+            color: white;
+            font-size: 90px;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .heading .heading1 {
+            position: absolute;
+            top: 100px;
+            left: 70px;
+            padding: 20px;
+            border-radius: 40px;
+        }
+
+        .content {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home_head">Placement Portal</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home_head">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login_index">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register_index">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq">FAQs</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="full-screen">
+        <div class="heading">
+            Career Genie
+            <div class="heading1">
+                <a href="your_redirect_url" class="btn btn-primary btn-lg"
+                    style="padding: 15px;padding-right: 40px;padding-left: 40px;">Placement Statistics</a>
+            </div>
+
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 offset-md-5">
+                        <div class="text-center mt-10">
+                            <div class="heading1">
+                                <a href="your_redirect_url" class="btn btn-primary btn-lg"
+                                    style="margin-top: 400px;padding: 15px;padding-right: 40px;padding-left: 40px;">GetStarted</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+-->

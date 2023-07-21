@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Example</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .box {
+            height: 500px;
+            background-color: rgb(239, 236, 236);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(87, 243, 105, 0.1);
+        }
+
+        .links-box {
+            padding: 20px;
+        }
+
+        .link-card {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #1613d2;
+        }
+
+        .link-card a {
+            display: block;
+            padding: 10px;
+            color: #f2ecec;
+            text-decoration: none;
+        }
+
+        .transparent-buttonn {
+            background: transparent;
+            border: none;
+            padding-top: 8px;
+            padding-bottom: 9px;
+            padding-right: 2px;
+            font-size: inherit;
+            color: white;
+
+        }
+
+        .transparent-buttonn:focus {
+            outline: none;
+        }
+
+        .transparent-buttonn:hover {
+            color: #1613d2;
+        }
+
+        .scrollable-box {
+            max-height: 350px;
+            /* Adjust the maximum height as needed */
+            overflow: auto;
+        }
+    </style>
+    <%- include('include/navbarhead')%>
+</head>
+
+<body>
+    <br>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="box links-box">
+                    <br>
+                    <h4 class="mb-4">Welcome PC</h4>
+                    <br>
+                    <div class="link-card">
+                        <a href="/pcdash">Dashboard</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="/pc_students">Students</a>
+                    </div>
+
+                    <div class="link-card">
+                        <a href="admin_drives">Drives</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="admin_events">Events</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="/post_notifications">Post Notifications</a>
+                    </div>
+                    <div class="link-card">
+                        <form action="/logout" method="POST">
+                            <button class="transparent-buttonn">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="box">
+                    <br>
+                    <h4 class="mb-4">Roles of Placement Coordinator...</h4>
+                    <div class="alert alert-primary" role="alert" style="margin-right: 30px;margin-left: 30px;">
+                        <li>
+                            Building and nurturing relationships with companies and recruiters to understand their
+                            hiring
+                            needs and establish partnerships.
+                        </li>
+                    </div>
+                    <div class="alert alert-primary" role="alert" style="margin-right: 30px;;margin-left: 30px;">
+
+                        <li>
+                            Organizing and coordinating on-campus placement drives, ensuring smooth processes for
+                            employers
+                            and students.
+                        </li>
+                    </div>
+                    <div class="alert alert-primary" role="alert" style="margin-right: 30px;;margin-left: 30px;">
+
+                        <li>
+                            Maintaining an up-to-date student database, facilitating efficient matching of students with
+                            suitable job opportunities.
+                        </li>
+                    </div>
+                    <div class="alert alert-primary" role="alert" style="margin-right: 30px;;margin-left: 30px;">
+
+                        <li>Collaborating with companies to secure internships and training programs, enabling students
+                            to
+                            gain valuable industry experience.
+                        </li>
+                    </div>
+                    <div class="alert alert-primary" role="alert" style="margin-right: 30px;;margin-left: 30px;">
+
+                        <li>
+                            Staying updated with industry trends and job market dynamics to align the college's
+                            curriculum.
+
+                        </li>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

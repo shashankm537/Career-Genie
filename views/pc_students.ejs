@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .box {
+            height: 500px;
+            background-color: rgb(239, 236, 236);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(87, 243, 105, 0.1);
+        }
+
+        .links-box {
+            padding: 20px;
+        }
+
+        .link-card {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #1613d2;
+        }
+
+        .link-card a {
+            display: block;
+            padding: 10px;
+            color: #f2ecec;
+            text-decoration: none;
+        }
+
+        .transparent-buttonn {
+            background: transparent;
+            border: none;
+            padding-top: 8px;
+            padding-bottom: 9px;
+            padding-right: 2px;
+            font-size: inherit;
+            color: white;
+
+        }
+
+        .transparent-buttonn:focus {
+            outline: none;
+        }
+
+        .transparent-buttonn:hover {
+            color: #1613d2;
+        }
+
+        .scrollable-box {
+            max-height: 350px;
+            /* Adjust the maximum height as needed */
+            overflow: auto;
+        }
+    </style>
+    <%- include('include/navbarhead')%>
+</head>
+
+<body>
+    <br>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="box links-box">
+                    <br>
+                    <h4 class="mb-4">Welcome PC</h4>
+                    <br>
+                    <div class="link-card">
+                        <a href="/pcdash">Dashboard</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="/pc_students">Students</a>
+                    </div>
+
+                    <div class="link-card">
+                        <a href="admin_drives">Drives</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="admin_events">Events</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="/post_notifications">Post Notifications</a>
+                    </div>
+                    <div class="link-card">
+                        <form action="/logout" method="POST">
+                            <button class="transparent-buttonn">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="box">
+                    <h4 class="mb-4" style="padding-top: 40px;padding-left: 35px;">Students List</h4>
+
+                    <div class="scrollable-box">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>USN</th>
+                                    <th>Cgpa</th>
+                                    <th>Branch</th>
+                                    <th>Profile</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <% for(var i=0; i < students.length; i++) { %>
+
+                                    <tr>
+                                        <td>
+                                            <%= i + 1 %>
+                                        </td>
+                                        <td>
+                                            <%= students[i].firstname +" "+students[i].lastname %></td>
+                              <td>
+                                                <%= students[i].usn %>
+                                        </td>
+                                        <td>
+                                            <%= students[i].cgpa %>
+                                        </td>
+                                        <td>
+                                            <%= students[i].branch %>
+                                        </td>
+                                        <td>
+                                            <a href=" view_pc_student/<%=students[i].usn %>">
+                                                <button class="btn btn-primary mr-1">View Profile</button>
+                                                </a>
+                                        </td>
+                                    </tr>
+
+                                    <% } %>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

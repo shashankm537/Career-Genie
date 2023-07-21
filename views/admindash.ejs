@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Example</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .box {
+            height: 500px;
+            background-color: rgb(239, 236, 236);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(87, 243, 105, 0.1);
+        }
+
+        .links-box {
+            padding: 20px;
+        }
+
+        .link-card {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #1613d2;
+        }
+
+        .link-card a {
+            display: block;
+            padding: 10px;
+            color: #f2ecec;
+            text-decoration: none;
+        }
+
+        .transparent-buttonn {
+            background: transparent;
+            border: none;
+            padding-top: 8px;
+            padding-bottom: 9px;
+            padding-right: 2px;
+            font-size: inherit;
+            color: white;
+
+        }
+
+        .transparent-buttonn:focus {
+            outline: none;
+        }
+
+        .transparent-buttonn:hover {
+            color: #1613d2;
+        }
+
+        .scrollable-box {
+            max-height: 350px;
+            /* Adjust the maximum height as needed */
+            overflow: auto;
+        }
+    </style>
+    <%- include('include/navbarhead')%>
+</head>
+
+<body>
+    <br>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="box links-box">
+                    <h4 class="mb-4">Welcome TPO</h4>
+                    <br>
+                    <div class="link-card">
+                        <a href="admindash">Dashboard</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="student_approval">Students</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="pc_approval">Coordinators</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="/pc_drives">Drives</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="/pc_events">Events</a>
+                    </div>
+                    <!-- <div class="link-card">
+                        <a href="/post_notifications">Post Notifications</a>
+                    </div> -->
+                    <div class="link-card">
+                        <form action="/logout" method="POST">
+                            <button class="transparent-buttonn">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="box">
+                    <br>
+                    <h4>  Training and placement officer</h4>
+                    <div class="container">
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <br>
+                                <p class="card-text">The Placement & Training department plays a vital role and is
+                                    becoming
+                                    a key department of the Institute. From the very beginning, the institute lays
+                                    greater
+                                    emphasis on Industrial Training and Practical Training for engineering students.
+                                    Employment of the students of the college is our major concern. The Placement Cell
+                                    serves to merely bridge the gap between a job-aspirant and a prospective employer.
+                                </p>
+                                <br>
+                                <p class="card-text">Placement Cell interacts with more than 200 reputed organizations
+                                    for
+                                    arranging campus interviews for the final year BE students. We make efforts to
+                                    organize
+                                    technical seminars, workshops, and corporate expectation sessions. Industry
+                                    personnel
+                                    are invited periodically to enrich the knowledge of our student community with the
+                                    latest technological innovations and industry practices. We produce graduates who
+                                    are
+                                    well equipped to handle the working norms of the industry.</p>
+
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

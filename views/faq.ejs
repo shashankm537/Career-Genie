@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career GENIE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-T0h/XTwp3PISZ5bMv7NrYOr5R5KN5xcDjb5Pjz7+ezpRRdCqLS7agISZ5v+gygzNbeR5a5Q5aDy5Gupz7iU6Tw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            animation: move-image 2s infinite alternate;
+        }
+
+        @keyframes move-image {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('include/navbarhead.ejs') %>
+
+        <div class="container-fluid">
+            <br><br><br>
+            <div class="row no-gutters mx-0">
+                <div class="col-md-6">
+
+
+                    <div class="image-container">
+                        <img src="../images/faqq.jpg" alt="Your Image" class="img-fluid" style="max-width: 800px;">
+                    </div>
+
+
+                </div>
+                <div class="col-md-6">
+                    <div id="accordion" style="padding-left: 15px;">
+
+                        <br>
+                        <br>
+                        <br>
+
+                        <div class="card">
+                            <div class="card-header mb-3" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        What is the objective of this portal ?
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    The Placement Cell plays a crucial role in locating job opportunities for under
+                                    graduates and post graduates passing out from the college by keeping in touch with
+                                    reputed firms and industrial establishments.
+                                    The placement cell operates round the year to facilitate contacts between companies
+                                    and graduates. The number of students placed through the campus interviews is
+                                    continuously rising.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header mb-3" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        How can I resolve issues related to login and registration?
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    Try login using your correct credentials. If you are having any trouble during
+                                    registration, you can reach out to us via the contact page.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header mb-3" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        How much time, one need to wait for the account approval ?
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    Once the Training and placement officer approves your candidature, then you will be
+                                    able to login successfully using your credentials.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header mb-3" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Are there any costs or charges involved in using the placement portal?
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    There are no fees associated with using the placement portal, and
+                                    this portal is exclusively for BMS students.
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <%- include('include/footer') %>
+
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .glass-card {
+            background-color: rgba(217, 240, 242, 0.951);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 30px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            margin-bottom: 20px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #4d4dff;
+        }
+
+        .form-group .col {
+            padding-right: 10px;
+        }
+
+        .form-group .row:last-child {
+            margin-bottom: 0;
+        }
+
+        .register-btn {
+            background-color: #7777f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .register-btn:hover {
+            background-color: #3d3dff;
+        }
+    </style>
+
+    <%- include('include/navbarhead') %>
+</head>
+
+<body>
+    <br><br><br>
+    <div class="container my-5 mx-10">
+        <div class="glass-card">
+            <h2 class="mb-4">Registration Form</h2>
+            <form action="/student_register" method="POST">
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="usn">USN</label>
+                        <input type="text" id="usn" name="usn" placeholder="Enter your usn">
+                    </div>
+                    <div class="col">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name">
+                    </div>
+                    <div class="col">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="branch">Branch</label>
+                        <input type="text" id="branch" name="branch" placeholder="Enter your branch">
+                    </div>
+                    <div class="col">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="phone">Phone number</label>
+                        <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="col">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="tenth">Tenth(in %)</label>
+                        <input type="text" id="tenth" name="tenth" placeholder="Enter your Tenth Percentage">
+                    </div>
+                    <div class="col">
+                        <label for="twelfth">Twelfth(in %)</label>
+                        <input type="text" id="twelfth" name="twelfth" placeholder="Enter your Twelfth Percentage">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="cgpa">Cgpa</label>
+                        <input type="text" id="cgpa" name="cgpa" placeholder="Enter your Cgpa upto current semester">
+                    </div>
+                    <div class="col">
+                        <label for="skills">Skills</label>
+                        <input type="text" id="skills" name="skills" placeholder="Enter your skills">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="backlogs">Active Backlogs</label>
+                        <input type="text" id="backlogs" name="backlogs"
+                            placeholder="Enter the number of Active Backlogs">
+                    </div>
+                    <div class="col">
+                        <label for="grad">Graduation Year</label>
+                        <input type="text" id="grad" name="grad" placeholder="Enter your Graduation year">
+                    </div>
+                </div>
+                <div class="form-group row">
+
+                    <div class="col">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" name="dob">
+                        <!--       <label for="dob">Date Of Birth</label>
+                        <input type="text" id="dob" name="dob" placeholder="YYYY-MM-DD">-->
+                    </div>
+                    <div class="col">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" placeholder="Enter your Age">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="Enter the address">
+                    </div>
+                    <div class="col">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" placeholder="Enter the State">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <button type="submit" class="btn btn-primary btn-block mb-4">
+                        Sign up
+                    </button>
+
+                </div>
+                <div class="text-center">
+                    <p>Already have an account? <a href="/student_login">Login</a></p>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

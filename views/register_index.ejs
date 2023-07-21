@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career GENIE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-T0h/XTwp3PISZ5bMv7NrYOr5R5KN5xcDjb5Pjz7+ezpRRdCqLS7agISZ5v+gygzNbeR5a5Q5aDy5Gupz7iU6Tw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <%- include('include/navbar_register.ejs') %>
+        <style>
+            .card-img-top {
+                height: 300px;
+                object-fit: cover;
+
+            }
+
+            .card {
+                padding: 20px;
+                background-color: rgb(223, 246, 247);
+            }
+
+            .col-md-4 {
+                margin-bottom: 50px;
+            }
+        </style>
+</head>
+
+<body style="background-color: rgb(226, 227, 225);">
+    <div class="container-fluid">
+        <br><br>
+
+        <div class="row mt-5">
+            <!-- First Image -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/student.jpg" alt="Image 1">
+                    <div class="card-body">
+                        <p>Are you a <br> <span style="font-size:25px;">Student?</span></p>
+                        <a href="student_register" class="btn btn-primary"
+                            style="padding-left: 25px; padding-right: 25px;">Register</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Image -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/pc.jpg" alt="Image 2">
+                    <div class="card-body">
+                        <p>Are you a <br> <span style="font-size: 25px;">Co-ordinator?</span></p>
+                        <a href="pc_register" class="btn btn-primary"
+                            style="padding-left: 25px; padding-right: 25px;">Register</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Third Image -->
+            <div class="col-md-4">
+                <div class="card">
+
+                    <div class="card-body"
+                        style="background-color: rgb(85, 96, 103); padding-top: 2px;padding-bottom: 0.1px;">
+                        <div class="p-4 md:w-1/3 bg-gray-700" style="font-family: 'Andada Pro', serif; color:#d1b8c6">
+                            <p class="text-justify" style="font-style: italic;">Build a strong academic foundation,
+                                develop your technical and soft skills, gain practical experience through
+                                internships and industry exposure, and networking with industry professionals.
+                                <br><br>
+                                Above all,<br>
+                                remember that the key to success is preparation, perseverance,
+                                and a willingness to learn and adapt. By working hard and staying committed to your
+                                goals, you can achieve great success in your career and make a positive impact on the
+                                world around you. Good luck!
+                            </p>
+                            <p style="text-align:right;font-style: italic;"><a href="admin_register">- Training
+                                    and Placement Officer</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('include/footer') %>
+</body>
+
+
+</html>

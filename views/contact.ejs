@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career GENIE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-T0h/XTwp3PISZ5bMv7NrYOr5R5KN5xcDjb5Pjz7+ezpRRdCqLS7agISZ5v+gygzNbeR5a5Q5aDy5Gupz7iU6Tw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css?v=7857324">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <%- include('include/navbarhead') %>
+</head>
+
+<body>
+    <!-- Contact Page -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+                    <hr class="my-4">
+                    <h1 class="mb-5" style="text-decoration: underline;">Contact Us</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div id="map" style="height: 400px;"></div>
+                    <script>
+                        function initMap() {
+                            var location = { lat:12.9410, lng: 77.5655};
+                            // 12.942528351435218 77.56488206526029 
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 14,
+                                center: location
+                            });
+                            var marker = new google.maps.Marker({
+                                position: location,
+                                map: map
+                            });
+                            var zoomInButton = document.getElementById('zoom-in');
+                            var zoomOutButton = document.getElementById('zoom-out');
+                            zoomInButton.onclick = function () {
+                                map.setZoom(map.getZoom() + 1);
+                            }
+                            zoomOutButton.onclick = function () {
+                                map.setZoom(map.getZoom() - 1);
+                            }
+                        }
+                    </script>
+                    <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbrQVVA3atYYau4A1kjdx8vHAN2U7Ll5Q&callback=initMap"></script>
+                    <div class="btn-group mt-3" role="group">
+                        <button id="zoom-in" type="button" class="btn btn-secondary"><i
+                                class="fas fa-plus"></i></button>
+                        <button id="zoom-out" type="button" class="btn btn-secondary"><i
+                                class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0 rounded-0 shadow-lg">
+                        <div class="card-body" style="background-color: rgb(254, 247, 238);">
+                            <h3 class="card-title mb-4">Contact Information</h3>
+                            <ul class="list-unstyled list-style">
+                                <li class="d-flex mb-5">
+                                    <i class="fas fa-map-marker-alt me-3"></i>
+                                    <div>
+                                        <h5 class="mb-1"> Address:</h5>
+                                        <p class="mb-1">BMS College of Engineering  Basavanagudi  Bangalore-560019</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex mb-5">
+                                    <i class="fas fa-phone me-3"></i>
+                                    <div>
+                                        <h5 class="mb-1">Phone:</h5>
+                                        <p class="mb-1">Phone:+91-80-26622130-35</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex mb-3">
+                                    <i class="fas fa-envelope me-3"></i>
+                                    <div>
+                                        <h5 class="mb-1">Email:</h5>
+                                        <p class="mb-1">info@bmsce.ac.in</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <%- include('include/footer') %>
+
+</body>
+
+</html>

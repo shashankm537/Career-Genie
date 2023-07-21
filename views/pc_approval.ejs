@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .box {
+            height: 500px;
+            background-color: rgb(239, 236, 236);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(87, 243, 105, 0.1);
+        }
+
+        .links-box {
+            padding: 20px;
+        }
+
+        .link-card {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #1613d2;
+        }
+
+        .link-card a {
+            display: block;
+            padding: 10px;
+            color: #f2ecec;
+            text-decoration: none;
+        }
+
+        .transparent-buttonn {
+            background: transparent;
+            border: none;
+            padding-top: 8px;
+            padding-bottom: 9px;
+            padding-right: 2px;
+            font-size: inherit;
+            color: white;
+
+        }
+
+        .transparent-buttonn:focus {
+            outline: none;
+        }
+
+        .transparent-buttonn:hover {
+            color: #1613d2;
+        }
+
+        .scrollable-box {
+            max-height: 350px;
+            /* Adjust the maximum height as needed */
+            overflow: auto;
+        }
+    </style>
+    <%- include('include/navbarhead')%>
+</head>
+
+<body>
+    <br>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="box links-box">
+                    <h4 class="mb-4">Welcome Admin</h4>
+                    <br>
+                    <div class="link-card">
+                        <a href="admindash">Dashboard</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="student_approval">Students</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="pc_approval">Coordinators</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="pc_drives">Drives</a>
+                    </div>
+                    <div class="link-card">
+                        <a href="pc_events">Events</a>
+                    </div>
+                    <!-- <div class="link-card">
+                        <a href="/post_notifications">Post Notifications</a>
+                    </div> -->
+                    <div class="link-card">
+                        <form action="/logout" method="POST">
+                            <button class="transparent-buttonn">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="box">
+                    <header id="header">
+                        <nav>
+                            <div class="container">
+                                <div class="text-center">
+                                    <br>
+                                    <h4 style="text-align:center;padding-top: 6px;padding-bottom: 4px;">
+                                        <a href="/pc_approval" class="nav-brand text-dark">Coordinators List</a>
+                                    </h4>
+                                    <br>
+                                    <div class="scrollable-box">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>USN</th>
+
+                                                    <th>Branch</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% for(var i=0; i < pc.length; i++) { %>
+                                                    <tr>
+                                                        <td>
+                                                            <%= i + 1 %>
+                                                        </td>
+                                                        <td>
+                                                            <%= pc[i].firstname +" "+pc[i].lastname %></td>
+                                                            <td><%= pc[i].usn %></td>
+                                                      
+                                                        <td><%= pc[i].branch %></td>
+                                                      
+                                                        <td>
+                                                          
+                                                           
+                                                            <a href=" view_pc/<%=pc[i].usn %>"><button
+                                                                    class=" btn btn-primary mr-1">View
+                                                                    Profile</button></a>
+
+                                                                <% if(pc[i].active===2) {%>
+                                                                    <!--    <a href="student_approved/<%=pc[i].usn %>"><button
+                                                                        class="btn btn-success mr-1">Approve</button></a> -->
+                                                                    <form action="pc_approved/<%=pc[i].usn %>"
+                                                                        method="POST" class="d-inline">
+                                                                        <button type="submit"
+                                                                            class="btn btn-success mr-1">Approve</button>
+                                                                    </form>
+                                                                    <form action="pc_rejected/<%=pc[i].usn %>"
+                                                                        method="POST" class="d-inline">
+                                                                        <button type="submit"
+                                                                            class="btn btn-warning mr-1">Reject</button>
+                                                                    </form>
+                                                                    <form
+                                                                        action="pc_deleted/<%=pc[i].usn %>?_method=DELETE"
+                                                                        method="POST" class="d-inline">
+                                                                        <button type="submit"
+                                                                            class="btn btn-danger mr-1">Delete</button>
+                                                                    </form>
+
+                                                                    <!---       <button class="btn btn-warning mr-1">Reject</button>
+                                                                <button class=" btn btn-danger mr-1">Delete</button>  -->
+                                                                    <%}%>
+                                                                        <% if(pc[i].active===1) {%>
+
+                                                                            <button type="submit"
+                                                                                class="btn btn-success mr-1"
+                                                                                disabled>Approved</button>
+
+                                                                            <form action="pc_rejected/<%=pc[i].usn %>"
+                                                                                method="POST" class="d-inline">
+                                                                                <button type="submit"
+                                                                                    class="btn btn-warning mr-1">Reject</button>
+                                                                            </form>
+                                                                            <form
+                                                                                action="pc_deleted/<%=pc[i].usn %>?_method=DELETE"
+                                                                                method="POST" class="d-inline">
+                                                                                <button type="submit"
+                                                                                    class="btn btn-danger mr-1">Delete</button>
+                                                                            </form>
+
+                                                                            <%}%>
+                                                                                <% if(pc[i].active===0) {%>
+                                                                                    <form
+                                                                                        action="pc_approved/<%=pc[i].usn %>"
+                                                                                        method="POST" class="d-inline">
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-success mr-1">Approve</button>
+                                                                                    </form>
+
+                                                                                    <button type="submit"
+                                                                                        class="btn btn-warning mr-1"
+                                                                                        disabled>Rejected</button>
+
+                                                                                    <form
+                                                                                        action="pc_deleted/<%=pc[i].usn %>?_method=DELETE"
+                                                                                        method="POST" class="d-inline">
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-danger mr-1">Delete</button>
+                                                                                    </form>
+
+                                                                                    <%}%>
+
+                                                        </td>
+                                                    </tr>
+                                                    <% } %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                </nav>
+                </header>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

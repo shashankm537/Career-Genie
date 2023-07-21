@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career GENIE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-T0h/XTwp3PISZ5bMv7NrYOr5R5KN5xcDjb5Pjz7+ezpRRdCqLS7agISZ5v+gygzNbeR5a5Q5aDy5Gupz7iU6Tw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <%- include('include/navbar_login.ejs') %>
+        <style>
+            .card-img-top {
+                height: 300px;
+                object-fit: cover;
+
+            }
+
+            .card {
+                padding: 20px;
+                background-color: rgb(223, 246, 247);
+            }
+
+            .col-md-4 {
+                margin-bottom: 50px;
+            }
+        </style>
+</head>
+
+<body style="background-color: rgb(226, 227, 225);">
+    <div class="container-fluid">
+        <br><br>
+        <div class="row mt-5">
+            <!-- First Image -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/student.jpg" alt="Image 1">
+                    <div class="card-body">
+                        <p>Are you a <br> <span style="font-size:25px;">Student?</span></p>
+                        <a href="./student_login" class="btn btn-primary"
+                            style="padding-left: 25px; padding-right: 25px;">Login</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Image -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/pc.jpg" alt="Image 2">
+                    <div class="card-body">
+                        <p>Are you a <br> <span style="font-size: 25px;">Co-ordinator?</span></p>
+                        <a href="./pc_login" class="btn btn-primary"
+                            style="padding-left: 25px; padding-right: 25px;">Login</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Third Image -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../images/tpo.jpg" alt="Image 3">
+                    <div class="card-body">
+                        <p>Are you a <br> <span style="font-size: 25px;">Admin?</span></p>
+                        <a href="./admin_login" class="btn btn-primary"
+                            style="padding-left: 25px; padding-right: 25px;">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('include/footer') %>
+</body>
+
+
+</html>
