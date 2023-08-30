@@ -1,7 +1,8 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const notifier = require('node-notifier');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const Admin = require('../../models/admin');
 const Pc = require('../../models/pc');
 const Student = require('../../models/student');
@@ -12,16 +13,13 @@ const Apply_event = require('../../models/apply_events');
 const Event_student = require('../../models/event_students');
 const Drive_student = require('../../models/drive_students');
 const Notifications = require('../../models/notifications');
-const pc = require('../../models/pc');
-const mongoose = require('mongoose');
-const route = express.Router();
 
+const route = express.Router();
+const password = encodeURIComponent("Shashank09#");
+const store = new MongoStore({ url: `mongodb+srv://shashank:${password}@cluster0.vknvzqo.mongodb.net/?retryWrites=true&w=majority` })
 route.use(express.urlencoded({ extended: true }));
 
-route.use(session({ secret: 'notgoodsecret' }));
-
-
-
+route.use(session({ secret: 'notgoodsecret', resave: false, saveUninitialized: false, store: store }));
 
 route.get('/', (req, res) => {
     res.render('home_head', { title: 'Career geNIE', req: req })
