@@ -1,0 +1,54 @@
+# name: Node.JS Career Genie
+
+# on:
+#   push:
+#     branches: [main]
+
+# jobs:
+#   test:
+#     name: Test and simulated build
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+
+#       - name: Use Node.js 14.x
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: 14.x
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Simulate build (because of no tests)
+#         run: echo "Simulated build succeeded"
+
+#   build:
+#     name: Docker Image Build
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v2
+
+#       - name: Login to Docker Hub
+#         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+
+#       - name: Build and push Docker image
+#         run: |
+#           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/career-genie:latest .
+#           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/career-genie:latest ${{ secrets.DOCKERHUB_USERNAME }}/career-genie:${{ github.sha }}
+#           docker push ${{ secrets.DOCKERHUB_USERNAME }}/career-genie:${{ github.sha }}
+
+#   deploy:
+#     name: Deploy
+#     needs: [build]
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Deploy to production
+#         uses: johnbeynon/render-deploy-action@v0.0.8
+#         with:
+#           service-id: ${{ secrets.SERVICE_ID }}
+#           api-key: ${{ secrets.RENDER_API_KEY }}
